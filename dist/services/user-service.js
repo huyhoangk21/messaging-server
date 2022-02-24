@@ -61,7 +61,8 @@ let UserService = class UserService {
                 });
                 ctx.res.cookie('token', token, {
                     httpOnly: true,
-                    sameSite: 'strict',
+                    sameSite: 'none',
+                    secure: true,
                     expires: new Date(Date.now() + 3 * 60 * 60 * 1000),
                 });
                 return user;
@@ -85,7 +86,8 @@ let UserService = class UserService {
                 });
                 ctx.res.cookie('token', token, {
                     httpOnly: true,
-                    sameSite: 'strict',
+                    sameSite: 'none',
+                    secure: true,
                     expires: new Date(Date.now() + 3 * 60 * 60 * 1000),
                 });
                 return user;
