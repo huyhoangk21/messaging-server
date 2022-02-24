@@ -34,7 +34,7 @@ const main = async () => {
 
     app.use;
     cors({
-      origin: 'http://localhost:3000',
+      origin: process.env.CLIENT,
       credentials: true,
     });
 
@@ -125,14 +125,14 @@ const main = async () => {
     apolloServer.applyMiddleware({
       app,
       cors: {
-        origin: 'http://localhost:3000',
+        origin: process.env.CLIENT,
         credentials: true,
       },
     });
 
     httpServer.listen(process.env.PORT, () => {
       console.log(
-        `Server running on http://localhost:${process.env.PORT}${apolloServer.graphqlPath}`
+        `Server running on ${process.env.CLIENT}${apolloServer.graphqlPath}`
       );
     });
   } catch (err) {
