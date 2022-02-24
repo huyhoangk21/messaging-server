@@ -131,7 +131,7 @@ const main = async () => {
             },
         });
         httpServer.listen(process.env.PORT, () => {
-            console.log(`Server running on ${process.env.CLIENT}${apolloServer.graphqlPath}`);
+            console.log('Server running');
         });
     }
     catch (err) {
