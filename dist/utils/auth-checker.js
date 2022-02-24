@@ -5,7 +5,6 @@ const apollo_server_express_1 = require("apollo-server-express");
 const authChecker = async ({ root, args, context, info }, roles) => {
     try {
         const { user } = context;
-        console.log(user);
         if (roles.length === 0)
             return user !== undefined;
         if (roles.includes(user.role))
