@@ -69,6 +69,7 @@ export class UserService {
 
       ctx.res.cookie('token', token, {
         httpOnly: true,
+        sameSite: 'strict',
         expires: new Date(Date.now() + 3 * 60 * 60 * 1000),
       });
 
@@ -101,6 +102,7 @@ export class UserService {
 
       ctx.res.cookie('token', token, {
         httpOnly: true,
+        sameSite: 'strict',
         expires: new Date(Date.now() + 3 * 60 * 60 * 1000),
       });
 
