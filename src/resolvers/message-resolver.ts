@@ -62,7 +62,6 @@ export class MessageResolver {
     return await this.messageService.deleteMessageById(messageId, pubSub);
   }
 
-  @Authorized()
   @Subscription({ topics: ({ args }) => args.channel })
   messageSentToChannel(
     @Arg('channel') channel: Channel,
@@ -71,7 +70,6 @@ export class MessageResolver {
     return message;
   }
 
-  @Authorized()
   @Subscription({ topics: ({ args }) => 'DELETED ' + args.channel })
   messageDeletedById(
     @Arg('channel') channel: Channel,

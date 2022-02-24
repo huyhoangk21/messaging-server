@@ -9,7 +9,6 @@ export const authChecker: AuthChecker<IContext> = async (
   try {
     const { user } = context;
     if (roles.length === 0) return user !== undefined;
-    if (!user) return false;
     if (roles.includes(user.role)) return true;
     return false;
   } catch (error) {
