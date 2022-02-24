@@ -8,8 +8,8 @@ export const authChecker: AuthChecker<IContext> = async (
 ) => {
   try {
     const { user } = context;
+    console.log(user);
     if (roles.length === 0) return user !== undefined;
-    console.log('im here');
     if (roles.includes(user.role)) return true;
     return false;
   } catch (error) {
